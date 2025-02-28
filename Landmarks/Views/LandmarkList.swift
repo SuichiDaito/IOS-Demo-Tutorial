@@ -11,6 +11,7 @@ struct LandmarkList: View {
     
     @Environment(ModelData.self) var modelData
     @State private var showOnlyFavorites = false // lưu biến cục bộ , khi giá trị thay đổi, swift tự động cập nhật giao diện tương ứng 
+    // nếu sử dụng showDetail.toggle thì chỉ cần xác định showDetail có true hay không
     
     var filteredLandmarks: [Landmark]{
         modelData.landmarks.filter{ landmark in

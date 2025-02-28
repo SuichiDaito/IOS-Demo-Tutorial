@@ -14,7 +14,7 @@ struct GraphCapsule: View {
     var range: Range<Double>
     var overallRange: Range<Double>
     
-    var heightRatio: CGFloat{
+    var heightRatio: CGFloat{  
         CGFloat((range.upperBound - range.lowerBound)/(overallRange.upperBound - overallRange.lowerBound))  // trả về một khoảng cách từ đáy để vẽ hình
     }
     var offsetRatio: CGFloat{

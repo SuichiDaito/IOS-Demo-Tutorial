@@ -12,7 +12,7 @@ struct LandmarkDetails: View {
     var landmark : Landmark
     
     var landmarkIndex : Int{
-        modelData.landmarks.firstIndex(where: { $0.id == landmark.id })! // nhận biết id nào được  đánh giá là favorite và don't favorite 
+        modelData.landmarks.firstIndex(where: { $0.id == landmark.id })! // nhận biết id nào được đánh giá là favorite và don't favorite
     }
     var body: some View {
         @Bindable var modelData = modelData
@@ -28,7 +28,7 @@ struct LandmarkDetails: View {
                     HStack {
                         Text(landmark.name)
                             .font(.title)
-                        FavoriteButton(isSet: $modelData.landmarks[landmarkIndex].isFavorite)
+                        FavoriteButton(isSet: $modelData.landmarks[landmarkIndex].isFavorite) //nhận biết xem id nào thì được đánh dấu là yêu thích
                     }
                     HStack{
                         Text(landmark.park).font(.subheadline)

@@ -9,16 +9,16 @@ import Foundation
 
 @Observable
 class ModelData {
-    var landmarks : [ Landmark ] = load("landmarkData.json")
-    var hikes : [ Hike ] = load("hikeData.json")
+    var landmarks : [ Landmark ] = load("landmarkData") // thực hiện đọc file
+    var hikes : [ Hike ] = load("hikeData") // thực hiện đọc file
 }
 
 
 
-func load<T: Decodable> (_ filename: String) -> T{
-    let data : Data
+func load<T: Decodable> (_ filename: String) -> T{       //chuyển đổi từ file Json thành struct Landmark
+    let data : Data // khởi tạo dữ liệu Data...
     
-    guard let file  = Bundle.main.url(forResource: filename, withExtension: nil)
+    guard let file  = Bundle.main.url(forResource: filename, withExtension: "json") // tiến hành đọc file có trong thư mục, withExtension là đuôi thư mục mà cần lấy
     else{
         fatalError(" Couldn't find \(filename) in main bundle")
     }

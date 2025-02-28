@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+
+
+
 struct HikeView: View {
     
     @Environment(ModelData.self) var modelData
@@ -15,7 +18,6 @@ struct HikeView: View {
     @State var keyPath: KeyPath<Hike.Observations, Range<Double>> = \.elevation
     @State  private var showDetail = false
 
-    
     var body: some View {
         @Bindable var modelData = modelData
         ScrollView(.vertical){
@@ -28,24 +30,33 @@ struct HikeView: View {
                     }
                     Spacer()
                     Button{
-                        showDetail.toggle()
+                        withAnimation(.easeInOut(duration: 0.4)){ // điều chỉnh thời gian animation
+                            showDetail.toggle()
+                        }
+                       
                     }label: {
                         Label("Graph", systemImage: "chevron.right.circle")
                             .labelStyle(.iconOnly)
-                            .imageScale(.large)
-                            .rotationEffect(.degrees(showDetail ? 90 : 0))
-                            .scaleEffect(showDetail ? 1.5 : 1)
+                            .imageScale(.large) // ảnh hưởng đến kích thước của ảnh
+                            .rotationEffect(.degrees(showDetail ? 90 : 0)) // điều chỉnh góc quay của đối tượng
+                            .scaleEffect(showDetail ? 1.5 : 1) // điều chỉnh độ lớn nhỏ của đối tượng đó
                             .padding(.trailing, 20)
+//
                     }
                 }
                 .padding(.bottom, 30)
                 Spacer()
                 if showDetail {
-                    HikeGraph(hike: modelData.hikes[2], path: keyPath).frame(width: 150, height: 150).padding(.bottom, 100).padding(.top, 20)
+                    HikeGraph(hike: modelData.hikes[2], path: keyPath)
+                        .frame(width: 150, height: 150)
+                        .padding(.bottom, 100)
+                        .padding(.top, 20)
+                        .transition(.opacity)
+                        
                 }
                 HStack{
                     Button{
-                        keyPath = \.elevation
+                        keyPath = \.elevation // điều chỉnh keypath, là các ditionary trong observation
                         }label: {
                             Label("Elevation", systemImage: "chevron.right.circle")
                                 .labelStyle(.titleOnly)
@@ -54,13 +65,13 @@ struct HikeView: View {
                         }
                         Spacer()
                     Button{
-                        keyPath = \.pace
+                        keyPath = \.pace // chuyển đổi sang một keypath khác
                         }label: {
                             Label("Pace", systemImage: "chevron.right.circle")
                                 .labelStyle(.titleOnly)
                                 .font(.title2)
                                 .padding(.trailing, 20)
-   
+                        // Nút bấm bằng chữ hoặc hình ảnh hoặc icon
                         }
                         Spacer()
                         Button{
