@@ -11,7 +11,21 @@ import Foundation
 class ModelData {
     var landmarks : [ Landmark ] = load("landmarkData") // thực hiện đọc file
     var hikes : [ Hike ] = load("hikeData") // thực hiện đọc file
+    var profile = Profile.default
+
+    var features: [Landmark]{
+        landmarks.filter{ $0.isFavorite }
+    }
+    
+    var categories: [String:[Landmark]]{
+        Dictionary(
+            grouping: landmarks,
+            by: { $0.category.rawValue }
+        )
+        
+    }
 }
+
 
 
 

@@ -56,9 +56,11 @@ struct HikeGraph: View {
         return GeometryReader { proxy in
             HStack(alignment: .bottom, spacing: proxy.size.width / 120){  // data là một tập hợp array các phần tử
                 ForEach(Array(data.enumerated()), id: \.offset ){         // data.enumerated =>  phương thức giúp biến data thành một chuỗi các cặp (index,item)
-                    index, observation in                            // trong đó index là vị trí phần tử trong mảng, còn observation là các giá trị trong mảng
-                    GraphCapsule(index: index, color: color, height: proxy.size.height, range: observation[keyPath: path] , overallRange: overallRange)
+                    index, observation in      // trong đó index là vị trí phần tử trong mảng, còn observation là các giá trị trong mảng
+                  
+                        GraphCapsule(index: index, color: color, height: proxy.size.height, range: observation[keyPath: path] , overallRange: overallRange)
                         .animation(.ripped(index: index))
+                 
                 }
                 
             }.offset(x: 0, y:proxy.size.height * heighRatio)
