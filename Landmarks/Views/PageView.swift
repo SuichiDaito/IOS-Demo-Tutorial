@@ -19,7 +19,7 @@ struct PageView<Page: View>:View {
                 .padding(.trailing)
         }
         .aspectRatio( 3/2 ,contentMode: .fit)
-        // 3/2 tỉ lệ chiều rộng trên chiều cao ở đây là 2/3 chiều rộng là 2 chiều cao là 3
+        // 3/2 tỉ lệ chiều rộng trên chiều cao 
     }
 }
 
