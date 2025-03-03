@@ -12,7 +12,7 @@
             "longitude": -116.166868,
             "latitude": 34.011286
         },
-        "imageName": "chilkoottrail"
+        "imageName": "chilkoottrail_feature"
     },
     {
         "name": "Silver Salmon Creek",
@@ -27,7 +27,7 @@
             "longitude": -152.665167,
             "latitude": 59.980167
         },
-        "imageName": "chilkoottrail"
+        "imageName": "chilkoottrail_feature"
     },
     {
         "name": "Chilkoot Trail",
@@ -87,7 +87,7 @@
             "longitude": -113.934831,
             "latitude": 48.56002
         },
-        "imageName": "charleyrivers"
+        "imageName": "charleyrivers_feature"
     },
     {
         "name": "Charley Rivers",
@@ -117,7 +117,7 @@
             "longitude": -141.518167,
             "latitude": 60.089917
         },
-        "imageName": "charleyrivers"
+        "imageName": "charleyrivers_feature"
     },
     {
         "name": "Rainbow Lake",
@@ -132,7 +132,7 @@
             "longitude": -150.086103,
             "latitude": 61.694334
         },
-        "imageName": "charleyrivers"
+        "imageName": "charleyrivers_feature"
     },
     {
         "name": "Hidden Lake",
@@ -162,7 +162,7 @@
             "longitude": -75.383212,
             "latitude": 37.91531
         },
-        "imageName": "chincoteague"
+        "imageName": "chincoteague_feature"
     },
     {
         "name": "Lake Umbagog",

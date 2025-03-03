@@ -14,7 +14,7 @@ class ModelData {
     var profile = Profile.default
 
     var features: [Landmark]{
-        landmarks.filter{ $0.isFavorite }
+        landmarks.filter{ $0.isFeatured }
     }
     
     var categories: [String:[Landmark]]{
